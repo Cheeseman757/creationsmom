@@ -1,63 +1,184 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celie's Creations - Home</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        nav {
-            background-color: #ffd1dc;
-            padding: 1em;
-        }
-        nav a {
-            margin: 0 1em;
-            text-decoration: none;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: 2em auto;
-            padding: 0 1em;
-        }
-        .hero {
-            text-align: center;
-            padding: 2em 0;
-        }
-        footer {
-            text-align: center;
-            padding: 1em;
-            background-color: #ffd1dc;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creations by Celie</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <header class="navbar">
+    <div class="nav-logo">🌸 Creations by Celie</div>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
     </nav>
-    
-    <div class="container">
-        <div class="hero">
-            <h1>Welcome to Celie's Creations</h1>
-            <p>Beautiful floral arrangements for every occasion</p>
-        </div>
-        
-        <h2>Our Flowers</h2>
-        <p>Discover our stunning collection of floral arrangements, crafted with love and care. From weddings to birthdays, we create memorable moments with flowers.</p>
+  </header>
+  <section class="hero-section">
+    <div class="hero-text">
+      <h1>Elegant Floral Arrangements</h1>
+      <p>Handcrafted <strong>live flower arrangements</strong> that turn everyday moments into something beautiful. Designed with heart, delivered with care.</p>
+      <a href="gallery.html" class="cta-button">View Gallery</a>
     </div>
-    
-    <footer>
-        <p>&copy; 2025 Celie's Creations. All rights reserved.</p>
-    </footer>
+  </section>
+  <section class="features">
+    <div class="feature-box">
+      <h3>🌼 Custom Designs</h3>
+      <p>We tailor each piece to reflect your story, theme, or event.</p>
+    </div>
+    <div class="feature-box">
+      <h3>🚚 Local Delivery</h3>
+      <p>Bringing blooms right to your doorstep with care and freshness.</p>
+    </div>
+    <div class="feature-box">
+      <h3>💐 Premium Flowers</h3>
+      <p>Sourced from trusted growers to ensure quality and longevity.</p>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 Creations by Celie. Crafted with love and flowers.</p>
+  </footer>
 </body>
 </html>
+
+<!-- styles.css -->
+<style>
+  :root {
+    --purple: #6f42c1;
+    --light-purple: #e3d7f3;
+    --white: #ffffff;
+    --dark: #2c234d;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f9f5ff, #ede3ff);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background: var(--purple);
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  .nav-logo {
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+  nav a {
+    margin-left: 2em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s;
+  }
+  nav a:hover::after {
+    width: 100%;
+  }
+  .hero-section {
+    height: 85vh;
+    background: url('https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?auto=format&fit=crop&w=1950&q=80') center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+  }
+  .hero-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(45, 17, 85, 0.5);
+    z-index: 1;
+  }
+  .hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    color: white;
+    background: rgba(255,255,255,0.1);
+    padding: 2em;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+  }
+  .hero-text h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.5em;
+  }
+  .hero-text p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+  .cta-button {
+    background: #ff9bd1;
+    color: white;
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  .cta-button:hover {
+    background: #e87fc0;
+  }
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    padding: 4em 2em;
+    background: #f6f0fb;
+  }
+  .feature-box {
+    background: white;
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    max-width: 300px;
+    text-align: center;
+  }
+  .feature-box h3 {
+    color: var(--purple);
+    margin-bottom: 0.5em;
+  }
+  footer {
+    text-align: center;
+    padding: 2em;
+    background: var(--purple);
+    color: white;
+    font-size: 0.9em;
+  }
+  @media (max-width: 768px) {
+    .hero-text h1 {
+      font-size: 2em;
+    }
+    .hero-text p {
+      font-size: 1em;
+    }
+    nav {
+      flex-direction: column;
+      gap: 1em;
+    }
+  }
+</style>
