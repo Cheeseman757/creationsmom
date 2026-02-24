@@ -1,184 +1,151 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Creations by Celie</title>
+  <meta name="description" content="Creations by Celie — handcrafted live flower arrangements for weddings, events, and everyday beauty. Designed with heart, delivered with care." />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Creations by Celie | Elegant Floral Arrangements</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="navbar">
-    <div class="nav-logo">🌸 Creations by Celie</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo"><span class="bloom">🌸</span> Creations by Celie</a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/gallery.html">Gallery</a></li>
+          <li><a href="/contact.html" class="nav-cta">Get in Touch</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
   </header>
-  <section class="hero-section">
-    <div class="hero-text">
-      <h1>Elegant Floral Arrangements</h1>
-      <p>Handcrafted <strong>live flower arrangements</strong> that turn everyday moments into something beautiful. Designed with heart, delivered with care.</p>
-      <a href="gallery.html" class="cta-button">View Gallery</a>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-tag fade-up">
+        <span class="leaf">🍃</span>
+        Handcrafted with Love
+      </div>
+      <h1 class="fade-up d1">Elegant Floral<br />Arrangements</h1>
+      <p class="fade-up d2">
+        Handcrafted <strong>live flower arrangements</strong> that turn everyday moments into something beautiful. Designed with heart, delivered with care.
+      </p>
+      <div class="hero-buttons fade-up d3">
+        <a href="/gallery.html" class="btn btn-primary">View Gallery</a>
+        <a href="/contact.html" class="btn btn-secondary">Order Custom</a>
+      </div>
+    </div>
+    <div class="hero-deco"></div>
+  </section>
+
+  <!-- FEATURES -->
+  <section>
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">What We Offer</span>
+        <h2>Blooms for Every Occasion</h2>
+        <div class="ornament">✿</div>
+        <p>From intimate dinner tables to grand celebrations — every arrangement tells a story.</p>
+      </div>
+
+      <div class="card-grid cols-3">
+        <div class="card fade-up d1">
+          <div class="card-icon">🌼</div>
+          <h3>Custom Designs</h3>
+          <p>We tailor each piece to reflect your story, theme, or event. No two arrangements are ever the same.</p>
+        </div>
+        <div class="card fade-up d2">
+          <div class="card-icon">🚚</div>
+          <h3>Local Delivery</h3>
+          <p>Bringing blooms right to your doorstep with care and freshness — because timing matters as much as beauty.</p>
+        </div>
+        <div class="card fade-up d3">
+          <div class="card-icon">💐</div>
+          <h3>Premium Flowers</h3>
+          <p>Sourced from trusted growers to ensure quality, longevity, and that unforgettable "just-picked" feeling.</p>
+        </div>
+      </div>
     </div>
   </section>
-  <section class="features">
-    <div class="feature-box">
-      <h3>🌼 Custom Designs</h3>
-      <p>We tailor each piece to reflect your story, theme, or event.</p>
-    </div>
-    <div class="feature-box">
-      <h3>🚚 Local Delivery</h3>
-      <p>Bringing blooms right to your doorstep with care and freshness.</p>
-    </div>
-    <div class="feature-box">
-      <h3>💐 Premium Flowers</h3>
-      <p>Sourced from trusted growers to ensure quality and longevity.</p>
+
+  <!-- TESTIMONIAL -->
+  <section style="background: var(--linen);">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Kind Words</span>
+        <h2>From Our Clients</h2>
+        <div class="ornament">✿</div>
+      </div>
+
+      <div class="testimonial-card fade-up d1">
+        <blockquote>"Celie made the most breathtaking centerpieces for our wedding. Every single guest commented on how beautiful they were. She truly has a gift."</blockquote>
+        <cite>— A Happy Bride</cite>
+      </div>
     </div>
   </section>
-  <footer>
-    <p>&copy; 2025 Creations by Celie. Crafted with love and flowers.</p>
+
+  <!-- CTA -->
+  <section>
+    <div class="cta-section fade-up">
+      <span class="section-tag">Ready to Order?</span>
+      <h2>Let's Create Something Beautiful</h2>
+      <p>Whether it's a single bouquet or a full event — we'd love to bring your vision to life.</p>
+      <a href="/contact.html" class="btn btn-primary">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo"><span class="bloom">🌸</span> Creations by Celie</div>
+          <p>Handcrafted floral arrangements made with love for life's most beautiful moments.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Creations by Celie. Crafted with love and flowers.</span>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    if (toggle) toggle.addEventListener('click', () => links.classList.toggle('open'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => { el.style.animationPlayState = 'paused'; observer.observe(el); });
+  </script>
+
 </body>
 </html>
-
-<!-- styles.css -->
-<style>
-  :root {
-    --purple: #6f42c1;
-    --light-purple: #e3d7f3;
-    --white: #ffffff;
-    --dark: #2c234d;
-  }
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f9f5ff, #ede3ff);
-    color: var(--dark);
-    overflow-x: hidden;
-  }
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1em 2em;
-    background: var(--purple);
-    color: white;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
-  .nav-logo {
-    font-size: 1.5em;
-    font-weight: 600;
-  }
-  nav a {
-    margin-left: 2em;
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    position: relative;
-  }
-  nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: white;
-    transition: width 0.3s;
-  }
-  nav a:hover::after {
-    width: 100%;
-  }
-  .hero-section {
-    height: 85vh;
-    background: url('https://images.unsplash.com/photo-1524594260043-4f2b3a3d9f9f?auto=format&fit=crop&w=1950&q=80') center center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    text-align: center;
-  }
-  .hero-section::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(45, 17, 85, 0.5);
-    z-index: 1;
-  }
-  .hero-text {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    color: white;
-    background: rgba(255,255,255,0.1);
-    padding: 2em;
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
-  }
-  .hero-text h1 {
-    font-size: 2.8em;
-    margin-bottom: 0.5em;
-  }
-  .hero-text p {
-    font-size: 1.2em;
-    margin-bottom: 1em;
-  }
-  .cta-button {
-    background: #ff9bd1;
-    color: white;
-    padding: 0.75em 1.5em;
-    border: none;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
-  }
-  .cta-button:hover {
-    background: #e87fc0;
-  }
-  .features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2em;
-    padding: 4em 2em;
-    background: #f6f0fb;
-  }
-  .feature-box {
-    background: white;
-    padding: 2em;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    max-width: 300px;
-    text-align: center;
-  }
-  .feature-box h3 {
-    color: var(--purple);
-    margin-bottom: 0.5em;
-  }
-  footer {
-    text-align: center;
-    padding: 2em;
-    background: var(--purple);
-    color: white;
-    font-size: 0.9em;
-  }
-  @media (max-width: 768px) {
-    .hero-text h1 {
-      font-size: 2em;
-    }
-    .hero-text p {
-      font-size: 1em;
-    }
-    nav {
-      flex-direction: column;
-      gap: 1em;
-    }
-  }
-</style>
