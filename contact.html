@@ -1,76 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celie's Creations - Contact</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        nav {
-            background-color: #ffd1dc;
-            padding: 1em;
-        }
-        nav a {
-            margin: 0 1em;
-            text-decoration: none;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: 2em auto;
-            padding: 0 1em;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 1em;
-            max-width: 400px;
-        }
-        footer {
-            text-align: center;
-            padding: 1em;
-            background-color: #ffd1dc;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Creations by Celie — order custom floral arrangements, request event florals, or ask us anything." />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Contact | Creations by Celie</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    
+
+  <!-- HEADER -->
+  <header class="site-header">
     <div class="container">
-        <h1>Contact Us</h1>
-        <p>Get in touch with Celie's Creations for your floral needs!</p>
-        
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            
-            <button type="submit">Send Message</button>
-        </form>
-        
-        <p>Phone: (555) 123-4567</p>
-        <p>Email: info@celiescreations.com</p>
+      <a href="/" class="logo"><span class="bloom">🌸</span> Creations by Celie</a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/gallery.html">Gallery</a></li>
+          <li><a href="/contact.html" class="nav-cta active">Get in Touch</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
     </div>
-    
-    <footer>
-        <p>&copy; 2025 Celie's Creations. All rights reserved.</p>
-    </footer>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-tag fade-up">Say Hello</span>
+      <h1 class="fade-up d1">Get in Touch</h1>
+      <div class="ornament fade-up d2">✿</div>
+      <p class="fade-up d2">Have a special occasion coming up? Want a custom arrangement? We'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- LEFT: Info -->
+        <div class="fade-up">
+          <h2>Let's Talk Flowers</h2>
+          <p style="margin-top: 1rem;">Fill out the form and we'll get back to you within 24 hours. For urgent orders, give us a call or send a DM on Instagram.</p>
+
+          <div class="contact-info-cards">
+            <div class="contact-info-card">
+              <div class="contact-info-icon">📧</div>
+              <div>
+                <h4>Email</h4>
+                <p><a href="mailto:hello@creationsbycelie.com" style="color: var(--dusty-rose);">hello@creationsbycelie.com</a></p>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-info-icon">📱</div>
+              <div>
+                <h4>Instagram</h4>
+                <p><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style="color: var(--dusty-rose);">@creationsbycelie</a></p>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-info-icon">📍</div>
+              <div>
+                <h4>Service Area</h4>
+                <p>Local delivery available — ask for details</p>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-info-icon">🕐</div>
+              <div>
+                <h4>Response Time</h4>
+                <p>Within 24 hours, 7 days a week</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Form -->
+        <div class="contact-form fade-up d2">
+          <h3>Send a Message</h3>
+          <p>Fields marked with * are required.</p>
+
+          <div id="formStatus" class="form-status"></div>
+
+          <div id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required autocomplete="given-name" maxlength="100" />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required autocomplete="family-name" maxlength="100" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required autocomplete="email" maxlength="200" />
+            </div>
+
+            <div class="form-group">
+              <label for="occasion">Occasion</label>
+              <select id="occasion" name="occasion">
+                <option value="">Select an occasion...</option>
+                <option value="wedding">Wedding</option>
+                <option value="birthday">Birthday</option>
+                <option value="anniversary">Anniversary</option>
+                <option value="sympathy">Sympathy / Memorial</option>
+                <option value="event">Corporate / Event</option>
+                <option value="just-because">Just Because</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required maxlength="2000" placeholder="Tell us about your vision — colors, style, date, anything that inspires you..."></textarea>
+            </div>
+
+            <!-- Honeypot -->
+            <div style="position: absolute; left: -9999px;" aria-hidden="true">
+              <input type="text" name="website" id="honeypot" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <button type="button" class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="handleSubmit()">
+              Send Message
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo"><span class="bloom">🌸</span> Creations by Celie</div>
+          <p>Handcrafted floral arrangements made with love for life's most beautiful moments.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Creations by Celie. Crafted with love and flowers.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav toggle
+    const toggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (toggle) toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    // Fade observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => { el.style.animationPlayState = 'paused'; observer.observe(el); });
+
+    // --- Input Sanitization ---
+    function sanitize(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML.trim();
+    }
+
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    // Rate limiting
+    let lastSubmit = 0;
+    const RATE_LIMIT_MS = 10000;
+
+    function handleSubmit() {
+      const status = document.getElementById('formStatus');
+      status.className = 'form-status';
+      status.style.display = 'none';
+
+      const now = Date.now();
+      if (now - lastSubmit < RATE_LIMIT_MS) {
+        status.textContent = 'Please wait a moment before submitting again.';
+        status.className = 'form-status error';
+        return;
+      }
+
+      // Honeypot
+      if (document.getElementById('honeypot').value !== '') {
+        status.textContent = 'Thank you! We\'ll be in touch soon.';
+        status.className = 'form-status success';
+        return;
+      }
+
+      const firstName = sanitize(document.getElementById('firstName').value);
+      const lastName = sanitize(document.getElementById('lastName').value);
+      const email = sanitize(document.getElementById('email').value);
+      const occasion = sanitize(document.getElementById('occasion').value);
+      const message = sanitize(document.getElementById('message').value);
+
+      if (!firstName || !lastName || !email || !message) {
+        status.textContent = 'Please fill in all required fields.';
+        status.className = 'form-status error';
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        status.textContent = 'Please enter a valid email address.';
+        status.className = 'form-status error';
+        return;
+      }
+
+      if (message.length < 10) {
+        status.textContent = 'Please share a bit more about what you\'re looking for.';
+        status.className = 'form-status error';
+        return;
+      }
+
+      lastSubmit = now;
+
+      // NOTE: Wire to Netlify Forms, Formspree, etc.
+      status.textContent = 'Thank you, ' + firstName + '! 🌸 We\'ll get back to you within 24 hours.';
+      status.className = 'form-status success';
+
+      document.getElementById('firstName').value = '';
+      document.getElementById('lastName').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('occasion').value = '';
+      document.getElementById('message').value = '';
+    }
+  </script>
+
 </body>
 </html>
