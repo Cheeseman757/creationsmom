@@ -1,55 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celie's Creations - About</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        nav {
-            background-color: #ffd1dc;
-            padding: 1em;
-        }
-        nav a {
-            margin: 0 1em;
-            text-decoration: none;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: 2em auto;
-            padding: 0 1em;
-        }
-        footer {
-            text-align: center;
-            padding: 1em;
-            background-color: #ffd1dc;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Meet Celie — a country girl with a lifelong love for flowers, turning her passion into handcrafted arrangements for life's most beautiful moments." />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>About | Creations by Celie</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .story-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .story-section.flipped .story-text { order: 2; }
+    .story-section.flipped .story-visual { order: 1; }
+    .story-visual {
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      background: var(--linen);
+      position: relative;
+    }
+    .story-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .story-visual .caption-tag {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 1.25rem;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--cream);
+      background: rgba(42, 31, 23, 0.55);
+      backdrop-filter: blur(8px);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+    }
+    .story-text h2 { margin-bottom: 0.5rem; }
+    .story-text .ornament { justify-content: flex-start; margin: 1rem 0 1.5rem; }
+    .story-text p { margin-bottom: 1.25rem; }
+    .story-text p:last-of-type { margin-bottom: 0; }
+
+    .values-section {
+      background: var(--linen);
+      border-radius: 24px;
+      padding: 3.5rem;
+      margin: 0 2rem;
+    }
+    .value-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    }
+    .value-item:last-child { margin-bottom: 0; }
+    .value-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
+      border-radius: 50%;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 15px rgba(92, 74, 58, 0.06);
+    }
+    .value-item h3 { margin-bottom: 0.35rem; font-size: 1.15rem; }
+    .value-item p { font-size: 0.95rem; }
+
+    .pull-quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--bark);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.5;
+      padding: 2rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .story-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .story-section.flipped .story-text { order: 1; }
+      .story-section.flipped .story-visual { order: 2; }
+      .values-section { padding: 2.5rem 1.5rem; margin: 0 1rem; }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    
+
+  <!-- HEADER -->
+  <header class="site-header">
     <div class="container">
-        <h1>About Celie's Creations</h1>
-        <p>At Celie's Creations, we believe flowers have the power to brighten any day. Founded by Celie Thompson, our passion is creating unique floral designs that bring joy to our customers.</p>
-        <p>With years of experience in floristry, we specialize in custom arrangements using the freshest blooms available.</p>
+      <a href="/" class="logo"><span class="bloom">🌸</span> Creations by Celie</a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html" class="active">About</a></li>
+          <li><a href="/gallery.html">Gallery</a></li>
+          <li><a href="/contact.html" class="nav-cta">Get in Touch</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
     </div>
-    
-    <footer>
-        <p>&copy; 2025 Celie's Creations. All rights reserved.</p>
-    </footer>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-tag fade-up">About Celie</span>
+      <h1 class="fade-up d1">A Country Girl &amp;<br />Her Flowers</h1>
+      <div class="ornament fade-up d2">✿</div>
+      <p class="fade-up d2">Some people find their calling in boardrooms. Celie found hers in a garden, barefoot, with dirt under her nails and wildflowers in her hand.</p>
+    </div>
+  </section>
+
+  <!-- STORY BLOCK 1 -->
+  <section>
+    <div class="container">
+      <div class="story-section fade-up">
+        <div class="story-visual">
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80" alt="Country garden wildflowers" loading="lazy" />
+          <span class="caption-tag">Where it all started</span>
+        </div>
+        <div class="story-text">
+          <span class="section-tag">The Beginning</span>
+          <h2>Roots in the Country</h2>
+          <div class="ornament">✿</div>
+          <p>Celie grew up on country land where the seasons told you everything you needed to know. Spring meant wildflowers along the fence line. Summer meant sunflowers taller than she was. Fall brought dahlias in every shade of gold and amber.</p>
+          <p>She wasn't taught to arrange flowers — she just always did. As a little girl, she'd fill mason jars with whatever was blooming and set them on the kitchen table. Her grandmother said she had "the eye" — a natural sense for what belongs together, for how color and shape and texture can tell a story without saying a word.</p>
+          <p>That instinct never left her. It just grew.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PULL QUOTE -->
+  <section style="padding: 2rem 0;">
+    <div class="container">
+      <p class="pull-quote fade-up">"I don't just arrange flowers — I arrange feelings. Every bloom has a personality, and my job is to introduce them to each other."</p>
+      <div class="ornament fade-up d1">✿</div>
+    </div>
+  </section>
+
+  <!-- STORY BLOCK 2 -->
+  <section>
+    <div class="container">
+      <div class="story-section flipped fade-up">
+        <div class="story-text">
+          <span class="section-tag">The Passion</span>
+          <h2>From Garden to Craft</h2>
+          <div class="ornament">✿</div>
+          <p>What started with mason jars on the kitchen table turned into something bigger. Friends started asking. Then their friends. Then brides, event planners, and families celebrating milestones they wanted to feel special.</p>
+          <p>Celie never went to floral design school. She learned by doing — by studying how light hits a petal, how a single sprig of eucalyptus can change the mood of an entire arrangement, how the right flowers on the right day can make someone cry happy tears.</p>
+          <p>Every arrangement she creates carries that same country-girl honesty: real, warm, and made with hands that genuinely love the work.</p>
+        </div>
+        <div class="story-visual">
+          <img src="https://images.unsplash.com/photo-1468327768560-75b778cbb551?auto=format&fit=crop&w=800&q=80" alt="Handcrafted floral arrangement" loading="lazy" />
+          <span class="caption-tag">Made by hand, always</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY BLOCK 3 -->
+  <section>
+    <div class="container">
+      <div class="story-section fade-up">
+        <div class="story-visual">
+          <img src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?auto=format&fit=crop&w=800&q=80" alt="Beautiful bouquet delivery" loading="lazy" />
+          <span class="caption-tag">For the moments that matter</span>
+        </div>
+        <div class="story-text">
+          <span class="section-tag">The Mission</span>
+          <h2>Making Moments Bloom</h2>
+          <div class="ornament">✿</div>
+          <p>Creations by Celie isn't about being the biggest florist or the fanciest. It's about making something beautiful with your hands and giving it to someone who needs a little beauty in their day.</p>
+          <p>Whether it's a bride's bouquet that makes her mama cry, a "just because" delivery that saves someone's bad Tuesday, or a centerpiece that makes guests forget to check their phones — that's the work that matters.</p>
+          <p>Every arrangement is personal. Every petal is placed with intention. And every single one is made with the same love that little country girl felt the first time she brought wildflowers inside.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section>
+    <div class="values-section fade-up">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">How We Work</span>
+          <h2>The Celie Way</h2>
+          <div class="ornament">✿</div>
+        </div>
+
+        <div style="max-width: 640px; margin: 0 auto;">
+          <div class="value-item">
+            <div class="value-icon">🌿</div>
+            <div>
+              <h3>Always Fresh, Always Real</h3>
+              <p>We only work with live, fresh-cut flowers. No silk, no plastic, no shortcuts. The real thing, every single time.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🤲</div>
+            <div>
+              <h3>Handcrafted with Heart</h3>
+              <p>Every stem is placed by hand. Celie touches every arrangement that leaves the studio — it's personal, and it stays personal.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🏡</div>
+            <div>
+              <h3>Country Roots, Modern Beauty</h3>
+              <p>The aesthetic is grounded in the natural, honest beauty of the countryside — but refined for weddings, homes, and events of any style.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">💛</div>
+            <div>
+              <h3>It's About the Feeling</h3>
+              <p>Flowers aren't decoration — they're emotion. We design for how an arrangement makes you feel the moment you see it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="cta-section fade-up">
+      <span class="section-tag">Let's Work Together</span>
+      <h2>Ready to Bring Your<br />Vision to Bloom?</h2>
+      <p>Whether it's your wedding day or a Wednesday — Celie would love to create something beautiful for you.</p>
+      <a href="/contact.html" class="btn btn-primary">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo"><span class="bloom">🌸</span> Creations by Celie</div>
+          <p>Handcrafted floral arrangements made with love for life's most beautiful moments.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Creations by Celie. Crafted with love and flowers.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    if (toggle) toggle.addEventListener('click', () => links.classList.toggle('open'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => { el.style.animationPlayState = 'paused'; observer.observe(el); });
+  </script>
+
 </body>
 </html>
